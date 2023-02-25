@@ -15,12 +15,12 @@ const completed = ref(false);
 
 const excludeCurrentQuestions = useLocalStorage("excludeCurrentQuestions", false);
 const onlyCurrentQuestions = useLocalStorage("onlyCurrentQuestions", false);
-const min = useLocalStorage("min", 0);
-const max = useLocalStorage("max", questions.length);
+const min = useLocalStorage("min", 1);
+const max = useLocalStorage("max", questions.length + 1);
 const currentQuestion = computed(() => (currentQuestionNumber.value !== undefined ? questions[currentQuestionNumber.value] : undefined));
 
 function startQuiz() {
-	let questionsToAsk = questions.map((q, $i) => $i).slice(min.value, max.value);
+	let questionsToAsk = questions.map((q, $i) => $i).slice(min.value - 1, max.value - 1);
 	if (excludeCurrentQuestions.value) {
 		questionsToAsk = questionsToAsk.filter((q) => !questions[q].current);
 	} else if (onlyCurrentQuestions.value) {
@@ -86,7 +86,7 @@ function getNewQuestion() {
 			<div class="flex flex-col gap-y-4">
 				<div class="flex justify-between">
 					<button
-						class="w-24"
+						class="w-28"
 						:class="{
 							'bg-red-500 hover:bg-red-600': isQuizzing,
 							'bg-blue-500 hover:bg-blue-600': !isQuizzing,
