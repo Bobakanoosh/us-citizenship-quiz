@@ -424,10 +424,7 @@
 	},
 	{
 		"question": "77. What did Susan B. Anthony do?",
-		"answers": [
-			"fought for women's rights",
-			"fought for civil rights",
-		]
+		"answers": ["fought for women's rights", "fought for civil rights"]
 	},
 	{
 		"question": "78. Name one war fought by the United States in the 1900s.*",
@@ -536,11 +533,7 @@
 	},
 	{
 		"question": "95. Where is the Statue of Liberty?*",
-		"answers": [
-			"New York (Harbor)",
-			"Liberty Island",
-			"Also acceptable are New Jersey, near New York City, and on the Hudson (River)."
-		]
+		"answers": ["New York (Harbor)", "Liberty Island", "Also acceptable are New Jersey, near New York City, and on the Hudson (River)."]
 	},
 	{
 		"question": "96. Why does the flag have 13 stripes?",
