@@ -3,7 +3,7 @@ import q from "@/assets/questions.json";
 import IconGithub from "@/components/IconGithub.vue";
 import QuestionCard from "@/components/QuestionCard.vue";
 import { useLocalStorage } from "@vueuse/core";
-import { ref, computed, nextTick, watch, watchEffect } from "vue";
+import { ref, computed, nextTick } from "vue";
 import { shuffle } from "./util/shuffle";
 
 const questions: Type.Question[] = q;
@@ -39,6 +39,7 @@ function getNewQuestion() {
 		return;
 	}
 
+	// Hack to get QuestionCard to rerender
 	currentQuestionNumber.value = undefined;
 	nextTick(() => {
 		currentQuestionNumber.value = unaskedQuestions.value.pop();

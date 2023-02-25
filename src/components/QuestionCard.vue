@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUpdated, ref } from "vue";
+import { ref } from "vue";
 
 const props = defineProps<{ question: Type.Question }>();
 const showAnswer = ref(false);
