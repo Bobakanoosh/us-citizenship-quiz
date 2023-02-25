@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import q from "@/assets/questions.json";
+import IconGithub from "@/components/IconGithub.vue";
 import QuestionCard from "@/components/QuestionCard.vue";
 import { useLocalStorage } from "@vueuse/core";
 import { ref, computed, nextTick, watch, watchEffect } from "vue";
@@ -48,8 +49,13 @@ function getNewQuestion() {
 <template>
 	<div class="flex justify-center h-full w-full overflow-y-auto p-5">
 		<div class="flex flex-col gap-y-6 h-full text-white max-w-2xl lg:gap-y-8">
-			<div class="flex flex-col gap-y-1">
-				<h1 class="text-2xl font-bold">US Citizenship Quiz</h1>
+			<div class="flex flex-col gap-y-2">
+				<div class="flex items-center justify-between text-2xl">
+					<h1 class="font-bold">US Citizenship Quiz</h1>
+					<a href="https://github.com/Bobakanoosh/us-citizenship-quiz" target="_blank">
+						<IconGithub />
+					</a>
+				</div>
 				<p class="text-gray-400">
 					Basic citizenship quiz tool to help you ace the test. There are 100 questions total. Add 10 new questions each day by increasing
 					the range of the questions
